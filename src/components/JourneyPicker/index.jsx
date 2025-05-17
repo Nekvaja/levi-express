@@ -39,7 +39,7 @@ export const JourneyPicker = ({ onJourneyChange }) => {
     const json = await response.json();
     const results = json.results;
 
-    console.log(onJourneyChange(results));
+    onJourneyChange(results);
   }
 
 
