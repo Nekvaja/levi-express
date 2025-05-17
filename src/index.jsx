@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
 import { App } from './components/App';
 import './global.css';
 import { HomePage } from './pages/HomePage';
-import { ReservationPage } from './components/ReservationPage/ReservationPage';
+import { ReservationPage } from './pages/ReservationPage/ReservationPage';
 
 
 const router = createBrowserRouter([
@@ -25,6 +25,12 @@ const router = createBrowserRouter([
  
 ]);
 
+/*
 createRoot(document.querySelector('#app')).render(
   <RouterProvider router={router} />
+);
+*/
+
+createRoot(document.querySelector('#app')).render(
+  <RouterProvider router={router} future={{ v7_startTransition: true, v7_relativeSplatPath: true }} />
 );
