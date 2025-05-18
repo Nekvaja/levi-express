@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { JourneyPicker } from '../../components/JourneyPicker';
 import { JourneyDetail } from '../../components/JourneyDetail/JourneyDetail';
-import { SelectedSeat } from '../../components/SelectedSeat/SelectedSeat';
 import { useNavigate } from 'react-router-dom';
+import { SeatPicker } from '../../components/SeatPicker/SeatPicker';
 
 export const HomePage = () => {
     const navigate = useNavigate();
@@ -46,7 +46,7 @@ navigate(`/reservation/${reservation.reservationId}`);
     {journey && <JourneyDetail journey={journey.stops}/> }
     </main>
 
-    {journey && <SelectedSeat number={journey.autoSeat}/> }
+     <SeatPicker/>
 
     <div className="controls container">
       <button 
@@ -55,6 +55,8 @@ navigate(`/reservation/${reservation.reservationId}`);
       onClick={HandleBuy}
       >Rezervovat</button>
     </div>
+
+   
 
 
     </>
