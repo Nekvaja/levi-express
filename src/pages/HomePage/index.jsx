@@ -27,10 +27,12 @@ export const HomePage = () => {
     journeyId: journey.journeyId,
   }),
 });
- 
+
+  console.log(journey)
+
  const data = await response.json();
   const reservation = data.results
-  console.log(reservation)
+
 navigate(`/reservation/${reservation.reservationId}`);
 
   }
@@ -46,7 +48,7 @@ navigate(`/reservation/${reservation.reservationId}`);
     {journey && <JourneyDetail journey={journey.stops}/> }
     </main>
 
-     <SeatPicker/>
+    {journey && <SeatPicker seats={journey.seats}/>}
 
     <div className="controls container">
       <button 
