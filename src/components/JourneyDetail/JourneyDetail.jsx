@@ -10,7 +10,7 @@ export const JourneyDetail = ({journey}) => {
       <div className="stops">
 
         {
-            journey.map((stop) => (
+            journey.stops.map((stop) => (
         <BusStop key={stop.code} name={stop.name} station={stop.station} time={stop.time}/>
         ))
         }

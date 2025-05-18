@@ -1,23 +1,8 @@
 import { SeatRow } from "../SeatRow/SeatRow";
 import "./SeatPicker.css";
 
-const testRow = [
-  {
-    number: 33,
-    isOccupied: false,
-  },
-  {
-    number: 29,
-    isOccupied: true,
-  },
-  {
-    number: 25,
-    isOccupied: false,
-  },
-];
 
-
-export const SeatPicker = ({seats}) => {
+export const SeatPicker = ({seats, selectedSeat}) => {
     return (
         <>
             <div className="seat-picker container">
@@ -25,7 +10,7 @@ export const SeatPicker = ({seats}) => {
                 <div className="seats">
 
                 {seats.map((seat, index) => (
-                <SeatRow key={index} row={seat}/>
+                <SeatRow key={index} row={seat} rowSelectedSeat={selectedSeat}/>
                     ))}
                 </div>
             </div>

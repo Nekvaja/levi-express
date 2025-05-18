@@ -45,10 +45,10 @@ navigate(`/reservation/${reservation.reservationId}`);
       value = {journey}
       onJourneyChange={handleJourneyChange}/>
 
-    {journey && <JourneyDetail journey={journey.stops}/> }
+    {journey && <JourneyDetail journey={journey}/> }
     </main>
 
-    {journey && <SeatPicker seats={journey.seats}/>}
+    {journey && <SeatPicker seats={journey.seats} selectedSeat={journey.autoSeat}/>}
 
     <div className="controls container">
       <button 
