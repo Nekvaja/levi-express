@@ -5,7 +5,7 @@ import { SelectedSeat } from '../../components/SelectedSeat/SelectedSeat';
 import { useNavigate } from 'react-router-dom';
 
 export const HomePage = () => {
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
     const [journey, setJourney] = useState(null);
 
@@ -28,9 +28,11 @@ export const HomePage = () => {
   }),
 });
  
- const json = await response.json();
-const reservationId = json.results.reservationId;
-navigate(`/reservation/${reservationId}`);
+ const data = await response.json();
+  const reservation = data.results
+  console.log(reservation)
+navigate(`/reservation/${reservation.reservationId}`);
+
   }
 
 
